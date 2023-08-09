@@ -1,16 +1,30 @@
 {
-  "name": "crud-mysql",
-  "version": "0.0.0",
-  "private": true,
+  "name": "node-api-mongodb-Atlas",
+  "version": "1.0.0",
+  "description": "CRUD API",
+  "main": "app.js",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "start": "node app.js",
+    "test": "nodemon --exec npm run babel-node src/index.js",
+    "dev": "nodemon --exec npm run babel-node src/_test_.js"
   },
+  
+  "author": "ns",
+  "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.0.1",
-    "express": "~4.16.1",
-    "mongoose": "^6.4.4"
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongodb": "^5.7.0",
+    "mongoose": "^5.9.12"
   },
   "devDependencies": {
-    "nodemon": "^2.0.19"
+    "@babel/cli": "^7.22.10",
+    "@babel/core": "^7.22.10",
+    "@babel/node": "^7.22.10",
+    "@babel/preset-env": "^7.22.10",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.22"
   }
 }
