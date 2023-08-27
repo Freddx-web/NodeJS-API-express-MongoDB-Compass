@@ -1,17 +1,22 @@
 
-
-
 //import  from 
-const { app, port } = require('./app');
+import app from './app';
+import { connectDB } from './database/connect.js'
 
+async function main() {
+  try {
+    // Connect MongonDB
+    await connectDB();
+    //Server
+    app.listen(app.get('port'),() => {
+      console.log(`URL: http://localhost:${app.get('port')}/api`);
+    });
 
-
-const main = () => {
-
-  app.listen(port, () => console.log(`Example app listening on port ${port}!`))
-
- 
+  } catch (error) {
+    console.error(error);
+  }
 };
 
-main(); 
+main();
+
 

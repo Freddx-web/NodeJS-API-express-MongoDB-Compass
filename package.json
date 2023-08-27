@@ -1,29 +1,30 @@
 {
-  "name": "node-api-mongodb-Compass",
+  "name": "restapi-nodejs-express-mysql-master",
   "version": "1.0.0",
-  "description": "CRUD API",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon src/app.js"
+    "babel-node": "babel-node --presets=@babel/preset-env",
+    "dev": "nodemon --exec npm run babel-node src/index.js",
+    "test": "nodemon --exec npm run babel-node src/_test_.js",
+    "mongo": "nodemon --exec npm run babel-node src/database/connect.js"
   },
+  "keywords": [],
   "author": "",
-  "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.20.2",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
-    "dotenv": "^8.6.0",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "http-errors": "^2.0.0",
-    "http-server": "^14.1.1",
-    "mongoose": "^5.13.20",
-    "path": "^0.12.7"
+    "mongoose": "^7.4.3",
+    "promise-mysql": "^5.2.0"
   },
+  "license": "ISC",
+  "description": "",
   "devDependencies": {
-    "@babel/cli": "^7.22.10",
-    "@babel/core": "^7.22.10",
-    "@babel/node": "^7.22.10",
-    "@babel/preset-env": "^7.22.10",
+    "@babel/cli": "^7.22.5",
+    "@babel/core": "^7.22.5",
+    "@babel/node": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.22"
   }

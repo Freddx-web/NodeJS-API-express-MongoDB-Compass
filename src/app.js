@@ -1,49 +1,43 @@
-// Using Node.js `require()`
-const mongoose = require('mongoose');
-const express = require('express');
-const morgan = require('morgan')
-const cors = require('cors');
-
-/*
-try{
-// Connect Mongoose
-mongoose.connect('mongodb://127.0.0.1:27017/data_base_1', {
-  useUnifiedTopology: true,
-  useNewUrlParser: true,
-  useCreateIndex: true,
-})
-  .then(() => console.log('Connected!'));
-  
-} catch (error) {
-  //handleError(error);
-  console.log("failed connected to database"+error);
-} */
-
-
+import mongoose from "mongoose";
+import express from "express";
+import morgan from "morgan";
+import cors from "cors";
 
 const app = express();
-
 app.use(cors());
 // Settings
 app.set("port", 4000);
- 
+
 // Middlewares
 app.use(morgan("dev"));
 app.use(express.json());
 
-require('./database/connect.js');
+// Routes
 
-/*
-  // Schema
-  const UserSchema = new mongoose.Schema({
-    name: String,
-    email: String
-  })
+// API
+app.get("/api", (req, res) =>{
   
+  res.status(200).send("Server.");
   
-  // Import Schema
-  const MyModel = mongoose.model('users', UserSchema); */
-  
+});
+
+// 404
+app.use(function(req, res, next) {
+  next(createError(404));
+});
+
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
+});
+
+// Export App 
+export default app;
 
 
-  module.exports = app;
