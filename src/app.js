@@ -3,6 +3,10 @@ import express from "express";
 import morgan from "morgan";
 import cors from "cors";
 
+//
+import { FRONTEND_URL } from "./config.js";
+import { router } from "./routes/UsersRouter.js"
+
 const app = express();
 app.use(cors());
 // Settings
