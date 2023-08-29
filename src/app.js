@@ -5,7 +5,7 @@ import cors from "cors";
 
 //
 import { FRONTEND_URL } from "./config.js";
-import { router } from "./routes/UsersRouter.js"
+import AuthRouter from "./routes/UsersRoutes.js";
 
 const app = express();
 app.use(cors());
@@ -17,13 +17,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 // Routes
-
-// API
-app.get("/api", (req, res) =>{
-  
-  res.status(200).send("Server.");
-  
-});
+app.use("/api/auth", AuthRouter);
 
 // 404
 app.use(function(req, res, next) {
