@@ -1,8 +1,12 @@
 
-//import  from 
+/**
+ * Index
+ */
+
 import app from './app';
 import { connectDB } from './database/connect.js'
 
+// Start App
 async function main() {
   try {
     // Connect MongonDB
