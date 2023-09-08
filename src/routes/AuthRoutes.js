@@ -14,7 +14,7 @@ const router = Router();
 
 // (POST)
 router.post("/register", getAuthController.register);
-//router.post("/login", login);
+router.post("/login", getAuthController.login);
 //router.get("/verify", verifyToken);
 //router.post("/logout", verifyToken, logout);
 
