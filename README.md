@@ -24,8 +24,6 @@
   </a>
   
 
-
-
   <h3 align="center">Api Node React</h3>
 
   <p align="center">
