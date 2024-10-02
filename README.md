@@ -26,7 +26,7 @@
     <img src="https://img.icons8.com/color/144/null/mongodb.png"/>
   </a>
 
-  <h3 align="center">Api Node React</h3>
+  <h3 align="center">API NodeJS(Express) Y MongoDB Compass </h3>
 
   <p align="center">
     Simple javascript project with Node js and React js
